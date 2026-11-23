@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hubungi APT Anda 🌱</title>
+<meta name="description" content="Hubungi Agen Pengembangan Tanaman (APT) di mukim anda terus melalui WhatsApp.">
+<meta name="theme-color" content="#a8e6a3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint-50:#f3fcf1;
+    --mint-100:#e4f8df;
+    --mint-200:#c9efc2;
+    --mint-300:#a8e6a3;
+    --leaf:#6cc56a;
+    --leaf-dark:#3f9a4a;
+    --forest:#2c5f34;
+    --butter:#fff1a8;
+    --peach:#ffd3b8;
+    --pink:#ffc6d3;
+    --sky:#cdeffd;
+    --lilac:#e2d8ff;
+    --ink:#2d4031;
+    --muted:#6f8a72;
+    --wa:#25d366;
+    --radius:28px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Nunito",system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 10% 0%, #fdfbe6 0, transparent 40%),
+      radial-gradient(circle at 95% 15%, var(--mint-200) 0, transparent 35%),
+      linear-gradient(180deg,var(--mint-100) 0%,var(--mint-50) 45%,#fbfff9 100%);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  /* floating decorations */
+  .deco{position:fixed;pointer-events:none;z-index:0;opacity:.55;font-size:2rem;animation:float 7s ease-in-out infinite}
+  .deco.d1{top:8%;left:4%}
+  .deco.d2{top:30%;right:5%;animation-delay:-2s;font-size:2.4rem}
+  .deco.d3{bottom:12%;left:6%;animation-delay:-4s}
+  .deco.d4{bottom:30%;right:8%;animation-delay:-1s;font-size:1.6rem}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+
+  .wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:28px 18px 60px}
+
+  /* header */
+  header{text-align:center;padding:22px 10px 10px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:2px dashed var(--mint-300);
+    padding:6px 16px;border-radius:999px;font-weight:800;font-size:.85rem;color:var(--leaf-dark);
+    box-shadow:0 4px 0 var(--mint-200);
+  }
+  h1{
+    font-family:"Baloo 2",cursive;font-weight:800;
+    font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.05;margin:16px 0 8px;
+    color:var(--forest);
+    text-shadow:3px 3px 0 var(--mint-300);
+  }
+  h1 .sprout{display:inline-block;animation:wiggle 2.4s ease-in-out infinite;transform-origin:bottom center}
+  @keyframes wiggle{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+  .subtitle{color:var(--muted);font-weight:600;max-width:560px;margin:0 auto;font-size:1.05rem}
+
+  /* search */
+  .search{
+    display:block;margin:26px auto 8px;max-width:440px;position:relative;
+  }
+  .search input{
+    width:100%;padding:15px 20px 15px 50px;border-radius:999px;
+    border:3px solid var(--mint-300);background:#fff;font:inherit;font-weight:700;color:var(--ink);
+    outline:none;box-shadow:0 6px 0 var(--mint-200);transition:border-color .2s, box-shadow .2s;
+  }
+  .search input::placeholder{color:#a7bca9;font-weight:600}
+  .search input:focus{border-color:var(--leaf);box-shadow:0 6px 0 var(--mint-300)}
+  .search span{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.2rem}
+
+  /* section title */
+  .section-title{
+    display:flex;align-items:center;gap:12px;justify-content:center;
+    font-family:"Baloo 2",cursive;font-weight:700;font-size:1.5rem;color:var(--forest);
+    margin:38px 0 22px;
+  }
+  .section-title::before,.section-title::after{
+    content:"";flex:0 1 80px;height:4px;border-radius:4px;
+    background:repeating-linear-gradient(90deg,var(--mint-300) 0 10px,transparent 10px 16px);
+  }
+
+  /* grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:26px}
+  .grid.single{grid-template-columns:minmax(240px,320px);justify-content:center}
+
+  /* card */
+  .card{
+    --tint:var(--mint-200);
+    position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;
+    background:#fff;border-radius:var(--radius);padding:22px 18px 20px;
+    text-decoration:none;color:inherit;
+    border:3px solid #fff;
+    box-shadow:0 10px 0 var(--tint), 0 18px 30px rgba(63,154,74,.12);
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+    animation:pop .5s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .card:hover,.card:focus-visible{transform:translateY(-8px) rotate(-1deg);box-shadow:0 16px 0 var(--tint), 0 26px 36px rgba(63,154,74,.18);outline:none}
+  .card:focus-visible{border-color:var(--leaf)}
+  .card:active{transform:translateY(2px) scale(.98);box-shadow:0 4px 0 var(--tint)}
+  @keyframes pop{from{opacity:0;transform:translateY(20px) scale(.92)}to{opacity:1;transform:none}}
+
+  .num{
+    position:absolute;top:14px;left:14px;width:34px;height:34px;border-radius:50%;
+    display:grid;place-items:center;font-family:"Baloo 2";font-weight:800;font-size:1rem;
+    background:var(--tint);color:var(--forest);
+  }
+  .leaf-corner{position:absolute;top:10px;right:14px;font-size:1.3rem;transition:transform .3s}
+  .card:hover .leaf-corner{transform:rotate(20deg) scale(1.2)}
+
+  .avatar{
+    width:150px;height:150px;border-radius:50%;
+    background:radial-gradient(circle at 50% 35%,#fff 0,var(--tint) 75%);
+    border:5px solid #fff;box-shadow:0 0 0 4px var(--tint);
+    overflow:hidden;display:grid;place-items:center;margin:8px 0 16px;position:relative;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;object-position:top center;transform:scale(1.05) translateY(4px)}
+  .avatar .initials{font-family:"Baloo 2";font-weight:800;font-size:3rem;color:var(--forest);line-height:1}
+  .avatar .initials small{display:block;font-size:1.6rem;margin-top:-4px}
+
+  .name{font-family:"Baloo 2",cursive;font-weight:700;font-size:1.15rem;line-height:1.2;color:var(--forest);min-height:2.4em;display:flex;align-items:center}
+  .role{
+    margin-top:8px;font-size:.82rem;font-weight:800;color:var(--leaf-dark);
+    background:var(--mint-50);border:2px solid var(--mint-200);border-radius:999px;padding:5px 12px;
+  }
+  .phone{margin-top:10px;font-weight:700;color:var(--muted);letter-spacing:.5px;font-size:.95rem}
+
+  .wa-btn{
+    margin-top:16px;display:inline-flex;align-items:center;gap:8px;
+    background:var(--wa);color:#fff;font-weight:800;border-radius:999px;padding:10px 20px;
+    box-shadow:0 5px 0 #1a9e4c;transition:transform .15s, box-shadow .15s;
+  }
+  .card:hover .wa-btn{transform:translateY(-2px);box-shadow:0 7px 0 #1a9e4c}
+  .wa-btn svg{width:20px;height:20px;fill:#fff}
+
+  /* pastel tints */
+  .t1{--tint:var(--mint-300)}
+  .t2{--tint:var(--butter)}
+  .t3{--tint:var(--peach)}
+  .t4{--tint:var(--sky)}
+  .t5{--tint:var(--pink)}
+  .t6{--tint:var(--lilac)}
+  .t-iat{--tint:#ffe08a}
+
+  .empty{text-align:center;color:var(--muted);font-weight:700;padding:30px;display:none}
+  .empty.show{display:block}
+
+  footer{text-align:center;margin-top:56px;color:var(--muted);font-weight:700;font-size:.9rem}
+  footer .hearts{font-size:1.3rem;display:block;margin-bottom:6px}
+
+  @media (max-width:540px){
+    .grid{grid-template-columns:1fr 1fr;gap:16px}
+    .grid.single{grid-template-columns:minmax(0,260px)}
+    .card{padding:18px 10px 16px;border-radius:22px}
+    .avatar{width:104px;height:104px;border-width:4px;margin:14px 0 12px}
+    .avatar .initials{font-size:2.2rem}
+    .avatar .initials small{font-size:1.2rem}
+    .num{width:28px;height:28px;font-size:.85rem;top:10px;left:10px}
+    .leaf-corner{top:8px;right:10px;font-size:1.1rem}
+    .name{font-size:.98rem}
+    .role{font-size:.7rem;padding:4px 8px}
+    .phone{font-size:.82rem}
+    .wa-btn{padding:8px 14px;font-size:.85rem}
+    .wa-btn svg{width:16px;height:16px}
+    .section-title{font-size:1.2rem;gap:8px;margin:30px 0 18px;white-space:nowrap}
+    .section-title::before,.section-title::after{flex-basis:28px}
+    h1 .sprout{display:inline-block}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+  <div class="deco d1">🌿</div>
+  <div class="deco d2">🌻</div>
+  <div class="deco d3">🍃</div>
+  <div class="deco d4">🌾</div>
+
+  <div class="wrap">
+    <header>
+      <span class="badge">🌱 Agen Pengembangan Tanaman</span>
+      <h1>Hubungi APT Anda <span class="sprout">🌱</span></h1>
+      <p class="subtitle">Pilih APT mengikut mukim anda dan tekan kad untuk terus berbual melalui WhatsApp 💬</p>
+      <label class="search">
+        <span>🔎</span>
+        <input id="q" type="search" placeholder="Cari nama atau mukim…" autocomplete="off" aria-label="Cari nama atau mukim">
+      </label>
+    </header>
+
+    <main>
+      <h2 class="section-title">🌾 Agen Pengembangan Tanaman</h2>
+      <div class="grid" id="apt"></div>
+
+      <h2 class="section-title" id="iat-title">🍯 Industri Asas Tani</h2>
+      <div class="grid single" id="iat"></div>
+
+      <p class="empty" id="empty">Alamak, tiada padanan 🥲 Cuba cari nama atau mukim lain.</p>
+    </main>
+
+    <footer>
+      <span class="hearts">🌱💚🌱</span>
+      Bersama memajukan pertanian setempat
+    </footer>
+  </div>
+
+<script>
+  // Senarai agen. Tambah "photo" jika ada gambar dalam folder img/.
+  const agents = [
+    { name:"Zamharir Bin Noh", role:"APT Mukim Changkat Jong", phone:"0108475362", photo:"img/zamharir.webp" },
+    { name:"Ahmad Saifpuddin Bin Safuan", role:"APT Mukim Hutan Melintang", phone:"0165237280", photo:"img/saifpuddin.webp" },
+    { name:"Madrina Binti Mat Isa", role:"APT Mukim Teluk Bharu", phone:"0134734476", photo:"img/madrina.webp" },
+    { name:"Nor Mala Binti Sarji", role:"APT Mukim Bagan Datuk", phone:"0134018473", photo:"img/normala.webp" },
+    { name:"Mazlan Bin Najib", role:"APT Mukim Sungai Durian", phone:"0193074977", photo:"img/mazlan.webp" },
+    { name:"Nurul Hidayu Azmira Binti Samsuri", role:"APT Mukim Rungkup", phone:"0194795013" },
+    { name:"Muhamad Airel Aswad Bin Rosli", role:"APT Mukim Durian Sebatang", phone:"01113297751" },
+    { name:"Muhammad Iqbal Afiq Bin Muhammad", role:"APT Mukim Sungai Manik / Labu Kubong", phone:"0193776984" },
+    { name:"Zatul Nadirah Binti Osman", role:"Agen Pengembangan Industri Asas Tani", phone:"01119775569", iat:true },
+  ];
+
+  const tints = ["t1","t2","t3","t4","t5","t6"];
+  const leaves = ["🌱","🌿","🍀","🌾","🌻","🍃"];
+  const waIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.39 9.39 0 0 1-1.44-5.01c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.44 9.42zm8.02-17.44A11.27 11.27 0 0 0 12.04.75C5.8.75.72 5.83.72 12.07c0 2 .52 3.94 1.51 5.66L.62 23.25l5.65-1.48a11.3 11.3 0 0 0 5.77 1.47h.01c6.24 0 11.32-5.08 11.32-11.32 0-3.02-1.18-5.87-3.31-8z"/></svg>';
+
+  const toWa = p => "60" + p.replace(/\D/g,"").replace(/^0/,"");
+  const fmt = p => p.length === 11 ? `${p.slice(0,3)}-${p.slice(3,7)} ${p.slice(7)}` : `${p.slice(0,3)}-${p.slice(3,6)} ${p.slice(6)}`;
+  const initials = n => n.replace(/\b(Bin|Binti)\b.*/i,"").trim().split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+  const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+  function card(a, i, n){
+    const msg = encodeURIComponent(`Assalamualaikum / Salam sejahtera ${a.name.split(/\s+/)[0]}, saya ingin bertanya berkenaan ${a.iat ? "industri asas tani" : "tanaman di " + a.role.replace(/^APT\s+/,"")}.`);
+    const tint = a.iat ? "t-iat" : tints[i % tints.length];
+    const av = a.photo
+      ? `<img src="${a.photo}" alt="Gambar ${esc(a.name)}" loading="lazy">`
+      : `<span class="initials">${initials(a.name)}<small>${leaves[i % leaves.length]}</small></span>`;
+    return `<a class="card ${tint}" style="animation-delay:${n*60}ms" href="https://wa.me/${toWa(a.phone)}?text=${msg}" target="_blank" rel="noopener"
+              data-search="${esc((a.name+" "+a.role).toLowerCase())}" aria-label="WhatsApp ${esc(a.name)}, ${esc(a.role)}">
+      <span class="num">${a.iat ? "★" : i+1}</span>
+      <span class="leaf-corner">${a.iat ? "🍯" : leaves[i % leaves.length]}</span>
+      <div class="avatar">${av}</div>
+      <div class="name">${esc(a.name)}</div>
+      <div class="role">${esc(a.role)}</div>
+      <div class="phone">📞 ${fmt(a.phone)}</div>
+      <span class="wa-btn">${waIcon} WhatsApp</span>
+    </a>`;
+  }
+
+  const apt = agents.filter(a=>!a.iat), iat = agents.filter(a=>a.iat);
+  document.getElementById("apt").innerHTML = apt.map((a,i)=>card(a,i,i)).join("");
+  document.getElementById("iat").innerHTML = iat.map((a,i)=>card(a,i,apt.length+i)).join("");
+
+  const q = document.getElementById("q"), empty = document.getElementById("empty");
+  q.addEventListener("input", () => {
+    const v = q.value.trim().toLowerCase();
+    let shown = 0;
+    document.querySelectorAll(".card").forEach(c => {
+      const hit = !v || c.dataset.search.includes(v);
+      c.style.display = hit ? "" : "none";
+      if (hit) shown++;
+    });
+    document.querySelectorAll(".grid").forEach(g => {
+      const any = [...g.children].some(c => c.style.display !== "none");
+      g.style.display = any ? "" : "none";
+      g.previousElementSibling.style.display = any ? "" : "none";
+    });
+    empty.classList.toggle("show", shown === 0);
+  });
+</script>
+</body>
+</html>
